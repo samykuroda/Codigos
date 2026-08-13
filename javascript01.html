@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de JavaScript</title>
+</head>
+<body id="fundo">
+    
+    <p id="mensagem"></p>
+
+    <script>
+        document.getElementById("mensagem").innerText = "Olá Mundo!"
+    </script>
+
+    <button onclick="document.getElementById('mensagem').innerHTML = 'Olá <br> usuário!';"> Clique Aqui </button>
+
+    <button onclick="document.getElementById('mensagem').innerText = 'Olá Mundo!';"> Voltar</button>
+
+    <h1>Modificar atributos</h1>
+    <button onclick="document.getElementById('lamp').src = 'Midias/on.gif'">Ligar</button>
+    <img id="lamp" src="Midias/off.gif" alt="Lâmpada Desligada">
+
+    <button onclick="document.getElementById('lamp').src = 'Midias/off.gif'">Desligar</button>
+
+    <h1> Modificando CSS</h1>
+
+    <button onclick="document.getElementById('mensagem').style.color = 'red';">Vermelho</button>
+    <button onclick="document.getElementById('mensagem').style.color = 'pink';">Rosa</button>
+    <button onclick="document.getElementById('mensagem').style.color = 'green';">Verde </button>
+    <button onclick="document.getElementById('mensagem').style.color = 'black';">Voltar</button>
+
+    <button onclick="visi('none')">Ocultar</button>
+    <button onclick="visi('block')">Revelar</button>
+
+    <h2> Modo Escuro</h2>
+    <button onclick="modo('#353B52','white')">Dark</button>
+    <button onclick="modo('white','black')">Light</button>
+
+    <script>
+        function modo(a,b) {
+            document.getElementById('fundo').style.background = a;
+            document.getElementById('fundo').style.color = b;
+        }
+
+        function visi(x) {
+            document.getElementById('mensagem').style.display = x;
+        }
+
+    </script>
+
+</body>
+</html>

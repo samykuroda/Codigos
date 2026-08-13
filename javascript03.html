@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de javaScript</title>
+</head>
+<body>
+    <h1> Operadores Lógicos</h1>
+
+    <input id="nota" type="text" placeholder="Nota">
+    <input id="freq" type="text" placeholder="Frequência">
+    <button onclick="resultado();">Resultado</button>
+    <p id="mensagem"></p>
+
+    <script>
+        function resultado(){
+            let nota = document.getElementById("nota").value;
+            let freq = document.getElementById("freq").value;
+
+            if (isNaN(nota) || isNaN(freq) || nota < 0 || nota > 10 || freq < 0 || freq > 100){
+                document.getElementById("mensagem").innerText = "Valor inválido";
+            } else if(nota >= 7 && freq >= 75){
+                document.getElementById("mensagem").innerText = "APROVADO";
+            } else {
+                document.getElementById("mensagem").innerText = "REPROVADO";
+            }
+        }
+    </script>
+
+    <h1>Operador de incremento</h1>
+    <button onclick="tamanho(4)">Aumenta</button>
+    <button onclick="tamanho(-4)">Diminui</button>
+    <p id="texto" style="font-size: 16px;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, cupiditate. Tempora minima, laborum velit harum, enim autem quasi modi quia voluptas dolores debitis, vitae porro? Aspernatur magni sint voluptate dolorum.</p>
+
+    <script>
+        function tamanho(pastel){
+            let tamanhoAtual = parseFloat(document.getElementById("texto").style.fontSize);
+            tamanhoAtual = Math.min(32, tamanhoAtual + pastel);
+            tamanhoAtual = Math.max(4, tamanhoAtual + pastel);
+            document.getElementById("texto").style.fontSize = tamanhoAtual + "px";
+        }
+    </script>
+</body>
+</html>

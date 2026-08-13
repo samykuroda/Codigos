@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        #erros li{
+           color: red;
+           
+        }
+         #erros li.certo{
+           color: green;
+           display: list-item;
+        }
+
+        #erros li::marker{
+            content: "✗"
+        }
+
+        #erros li.certo::marker {
+            content: "✓";
+        }
+        body{
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            margin: 250px;
+            background-image: url(Midias/back.jpg);
+        }
+        input[type=text], input[type=password]{
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border:2px solid #f28b8d;
+        
+        }
+        input[type=submit]:enabled{
+            width: 100vh;
+            padding: 11px;
+            background-color: #f28b8d;
+            color: white;
+        }
+        input[type=submit]:disabled{
+            width: 100vh;
+            padding: 11px;
+            background-color: #979797;
+            color: rgb(91, 91, 91);
+            cursor: not-allowed;
+        }
+
+        label{
+            display: block;
+            padding: 12px;
+        
+        }
+
+        form{
+            background-color: rgba(247, 212, 228, 0.514);
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+    </style>
+</head> 
+<body>        <!-- link do backend com servidor gratuito para testes de formulário-->
+    <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post">  <!-- método de envio mais seguro que 'get' para envio de formulários-->
+        <label for="nome">Nome:</label>
+        <input id="nome" type="text" name="nome" placeholder="Seu nome" required> <!-- o atributo "name" cria a identificação no banco de dados -->
+        
+        <br>
+
+        <label for="senha">Senha:</label>
+        <input id="senha" type="password" name="senha" onkeyup="validaForm();" placeholder="Sua senha">
+        <i id="olho1" class="bi bi-eye-slash" onclick="verSenha('senha','olho1')"></i>
+
+        <br>
+
+       
+
+        <label for="senha2">Confirme a senha:</label> <!-- o atributo "for" da foco no input que você colocou o ID-->
+        <input id="senha2" type="password" onkeyup="validaForm();" placeholder="Confirme sua senha">
+        <i id="olho2" class="bi bi-eye-slash" onclick="verSenha('senha2','olho2')";></i>
+
+        <ul id="erros">
+            <li id="msg2" style="display: none;">A senha deve conter pelo menos 8 caracteres</li>
+            <li id="msg3" style="display: none;">A senha deve conter pelo menos uma letra maiúscula</li>
+            <li id="msg4" style="display: none;">A senha deve conter pelo menos uma letra minúscula</li>
+            <li id="msg5" style="display: none;">A senha deve conter pelo menos um número</li>
+            <li id="msg6" style="display: none;">A senha deve conter pelo menos um caractere especial (@, $, !, %, *, ?, &)</li>
+        </ul>
+
+        <p id="mensagem" style="display: none;">As senhas não coincidem</p>
+
+        <input id="botao" type="submit" value="Cadastrar" disabled> <!-- o tipo de input "submit" dispara o "action" que está na tag form-->
+    </form>
+
+    <script>
+        
+
+            function verSenha(a,b){
+                let senha = document.getElementById(a);
+                let olho = document.getElementById(b);
+
+                if (senha.type == "text" ){
+                    senha.type = "password";
+                    olho.classList.remove("bi-eye");
+                    olho.classList.add("bi-eye-slash");        
+                } else {
+                    senha.type = "text";
+                    olho.classList.remove("bi-eye-slash");
+                    olho.classList.add("bi-eye"); 
+                }
+            }
+
+            function senhaForte(){
+
+            let senha = document.getElementById("senha").value;
+
+            if( senha != ""){
+                document.getElementById ("msg2").style.display= 'list-item';
+                document.getElementById ("msg3").style.display= 'list-item';
+                document.getElementById ("msg4").style.display= 'list-item';
+                document.getElementById ("msg5").style.display= 'list-item';
+                document.getElementById ("msg5").style.display= 'list-item';
+                document.getElementById ("msg6").style.display= 'list-item';
+            }
+        
+
+            if (senha.length >= 8){
+                document.getElementById("msg2").classList.add("certo");
+            } else {
+                document.getElementById("msg2").classList.remove ("certo");
+            }
+ 
+             if (/[A-Z]/.test(senha)){
+                document.getElementById("msg3").classList.add("certo");
+            } else {
+                document.getElementById("msg3").classList.remove("certo");
+            }
+ 
+             if (/[a-z]/.test(senha)){
+                document.getElementById("msg4").classList.add ("certo");
+            } else {
+                document.getElementById("msg4").classList.remove ("certo");
+            }
+             if (/\d/.test(senha)){
+                document.getElementById("msg5").classList.add("certo");
+            } else {
+                document.getElementById("msg5").classList.remove("certo");
+            }
+             if (/[!@#$%&*?]/.test(senha)){
+                document.getElementById("msg6").classList.add("certo");
+            } else {
+                document.getElementById("msg6").classList.remove("certo");
+            }
+
+            let resposta = senha.length >= 8 && /[A-Z]/.test(senha) && /[a-z]/.test(senha) && /\d/.test(senha) && /[!@#$%&*?]/.test(senha);
+            
+            if( resposta || senha == ""){
+                document.getElementById ("msg2").style.display= 'none';
+                document.getElementById ("msg3").style.display= 'none';
+                document.getElementById ("msg4").style.display= 'none';
+                document.getElementById ("msg5").style.display= 'none';
+                document.getElementById ("msg5").style.display= 'none';
+                document.getElementById ("msg6").style.display= 'none';
+            }
+
+            return resposta;
+        }
+
+            function senhaIgual(){
+                
+            let senha= document.getElementById ("senha").value;
+            let senha2= document.getElementById ("senha2").value;
+
+            if(senha != senha2 && senha != ""){
+                document.getElementById ("mensagem").style.display= 'list-item';
+                
+            }
+            else {
+                document.getElementById ("mensagem").style.display= 'none';
+                
+            }
+
+            return senha == senha2;
+        }
+
+            function validaForm(){
+                let forte = senhaForte();
+                let igual = senhaIgual();
+
+                document.getElementById('botao').disabled = !(forte && igual);
+            }
+                
+
+        
+    </script>
+</body>
+</html> 

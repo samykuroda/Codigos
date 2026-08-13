@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamento com CSS</title>
+    <style>
+        div{
+            background-color:coral;
+            padding: 20px;
+            width: 80px;
+            border: 2px solid;
+        }
+
+        .estatico{
+            position: static;
+            left: 150px;
+        }
+
+        .relativo{
+            position: relative;
+            left: 10px;
+            top:10px;
+        }
+
+        .absoluto{ /* usa como referencia a tela */
+            position: absolute;
+            top: 0px;
+            left: 150px;
+        }
+
+        .fixo{
+            position: fixed;
+            top:80px;
+            left: 150px;
+        }
+        .grudado{
+            position: sticky;
+            top:20px;
+        }
+        .container {
+            background-color: brown;
+            width: 400px;
+            height: 200px;
+            position: relative;
+        }
+        .container div{
+            background-color: gold;
+            position:absolute;
+            right: 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="estatico">Estático</div>
+    <div class="relativo">Relativo</div>
+    <div class="absoluto">Absoluto</div>
+    <div class="fixo">Fixo</div>
+    <div class="grudado">Grudado</div>
+
+    <div class="container">
+        <div class="">Absoluto</div>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quam esse consequatur aperiam consequuntur suscipit et, cum sunt. Dignissimos id quis aut fuga quia ipsum quos, sunt quisquam quibusdam. Necessitatibus odio commodi totam, minima esse facilis sequi itaque, veritatis perferendis architecto exercitationem quod quis vitae. Reiciendis explicabo magni dolor? Sed ad dolorem sequi mollitia voluptatum assumenda quasi quos nobis velit, in eum quas veniam quam nihil perspiciatis vero, rem atque provident tenetur tempore corporis magni error quo minus! Hic ipsam aperiam ducimus vel nesciunt dolor quia eligendi rerum? Alias facere adipisci quam voluptates nemo corporis obcaecati a fugit veniam nihil debitis, at quos molestiae iste fugiat dolores veritatis ex sed. Facere maxime voluptate, optio voluptates veritatis blanditiis nesciunt illo esse voluptas quae? Similique repellendus aut impedit deleniti necessitatibus? Sint soluta animi veniam quasi corrupti autem eligendi illo qui, libero a, nulla vero illum sed perspiciatis omnis veritatis expedita magni unde?</p>
+</body>
+</html>

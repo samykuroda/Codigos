@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de JavaScript</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(233, 222, 209);
+            margin-top: 70px;
+        }
+        h1, h2{
+            color: rgb(153, 57, 57);
+            font-family: cursive;
+        }
+
+        button{
+            color: rgb(136, 51, 62);
+        }
+    </style>
+</head>
+<body>
+    <h1> Tipos de mensagens de saída</h1>
+
+
+    <h2> Via alteração de conteúdo</h2>
+
+        <button onclick="document.getElementById('mensagem').innerText ='Mensagem via alteração de conteúdo';">Mensagem</button>
+
+        <p id="mensagem"></p>
+
+        <h2>Via Pop Up</h2>
+
+        <button onclick="alert('Mensagem via Pop Up');">Mensagem</button>
+
+        <h2>Via escrita direta</h2>
+        <button onclick="document.write('Mensagem via escrita direta');">Mensagem</button> 
+
+        <h2> Via console</h2>
+        <button onclick="console.log('Mensagem Via Console')">Mensagem</button>
+
+        <h2>Caixa de entrada</h2>
+        <button onclick="saudacao();">Mensagem</button>
+
+        <script>
+            function saudacao(){
+                let nome;
+                nome = prompt('Qual seu nome?');
+                alert('Olá, ' + nome + '!');
+                alert(nome + ', espero que tenha um dia bom!');
+            } 
+
+            //ISSO É UM COMENTÁRIO//
+
+        </script>
+
+        <h1>Desvio Condicional</h1>
+
+        <button onclick="saudacao2();">Mensagem</button>
+
+        <script>
+
+            function saudacao2(){
+                let nome = prompt('Qual seu nome?');
+                let hora = prompt('Digite a hora:');
+
+                if (hora < 12){
+                   alert("Bom dia " + nome + "!"); 
+                } else if (hora < 18){
+                    alert("Boa tarde" + nome + "!");
+                } else if (hora < 24){
+                    alert("Boa noite" + nome + "!");
+                } else {
+                    alert ("Valor inválido!");
+                }
+            }
+        </script>
+
+        <h1> Estrutura de repetição </h1>
+
+        <button onclick="saudacao3()">Mensagem</button>
+
+        <script>
+            function saudacao3(){
+                let resposta = prompt('Você me deve. Vai pagar? Sim ou Não.');
+
+                while (resposta != "Sim"){
+                    resposta = prompt('Você é caloteiro! Vai pagar Sim ou Não?!');
+                }
+                alert("Parabéns! Você é Honesto!");
+            }
+        </script>
+</body>
+</html>

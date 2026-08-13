@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Base</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+            font-family: hello_honey;
+            src: url(Fontes/hello\ honey.otf);
+        }
+
+        body{
+            font-family:"Goudy Old Style";
+        }
+        
+        header{
+            background-color: pink;
+            display: flex; 
+        }
+        nav{
+            background-color: rgba(255, 0, 0, 0.498);
+        }
+        main{
+            background-color: rgba(165, 42, 42, 0.692);
+            width: 100%;
+            padding:16px;
+        }
+        aside{
+            background-color: beige;
+            width: 100%;
+            padding:16px;
+        }
+        footer{
+            background-color: rgb(101, 91, 91);
+            height: 100px;
+        }
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        header div{
+            width: 100%;
+        }
+
+        header img{
+            height: 150px;
+            display: block;
+            margin: auto;
+        }
+        
+        header h1{
+            text-align: center;
+            align-self: center;
+            width: 100%;
+            font-family: hello_honey;
+            font-size:60px;
+            
+        }
+       .navbar-nav{
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+       }
+
+       .nav-item{
+        width: 100%;
+        text-align: center;
+        padding:10px;
+        
+       }
+       .nav-link{
+        text-decoration: none;
+        color: white;
+       }
+       .nav-item:hover{
+        background-color: rgba(143, 73, 85, 0.736);
+       }
+    
+       @media (min-width:576px){
+        main{
+            width: 70%;
+        }
+        aside{
+            width:30%;
+        }
+        .nav-item{
+            width: 20%;
+        }
+        header div{
+            width: 20%;
+        }
+
+        header h1{
+            width: 80%;
+        }
+        header img{
+            /* display: inline; */
+            margin: 0;
+            padding: 0;
+        }
+       }
+    </style>
+</head>
+<body>
+    <header class="row">
+        <div>
+        <img src="Midias/logo.jpg" alt="Logo">
+        </div>
+        <h1>Título do Site</h1>
+    </header>
+    <nav >                              <!-- Estrutura de navegação-->
+        <ul class="navbar-nav">                  <!-- unordered list/ lista não ordenada -->
+            <li class="nav-item"><a class="nav-link" href="#">Link 1</a></li>                  <!-- Lista -->
+            <li class="nav-item"><a class="nav-link" href="#">Link 2</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Link 3</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Link 4</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Link 5</a></li>
+        </ul>
+    </nav>
+    <div class="row">
+        <main>
+            <h1> Conteúdo Principal </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestias est asperiores. Temporibus a deserunt aperiam, ut eos magnam necessitatibus reprehenderit dolorum quaerat. Molestias repudiandae modi omnis dolore ea, repellat esse nulla accusamus distinctio tenetur iure corrupti magni, voluptatem doloremque sunt labore quibusdam exercitationem eos amet incidunt. Illum laudantium expedita nulla obcaecati odit laboriosam repellat perspiciatis nisi? Ullam nemo, ad reiciendis dolores facilis, non quisquam mollitia eveniet rem voluptatibus est consequuntur cupiditate magnam, fugiat corporis id error rerum praesentium ipsam eligendi? Necessitatibus laboriosam tenetur alias magnam atque numquam corporis pariatur ab illo velit! Nisi culpa delectus consectetur sed. Quas delectus modi eligendi ipsum harum minus, repudiandae numquam molestiae aperiam quisquam sapiente explicabo fugit, cum aut tempora id quis placeat nihil eum est, quam minima! Beatae est officia officiis excepturi odio aperiam nihil incidunt perspiciatis cumque veniam quibusdam, voluptatem fugiat vitae. Minima veniam ea eligendi, ipsa temporibus rerum. Laudantium, dolore libero?</p>
+            <p>Velit voluptatem quisquam, facilis id quia architecto, eaque delectus repudiandae modi incidunt quos laboriosam eum. Eos nobis illum sapiente quae at autem pariatur facilis magni non quis nisi dignissimos eveniet quaerat minus natus reiciendis debitis, atque, enim sed praesentium fuga libero iusto! Possimus quis at, dolorem incidunt nihil repudiandae ut. Ut eos cum nulla accusamus odit hic ducimus incidunt, nesciunt veniam quis quae aspernatur eveniet! Sapiente assumenda, odit neque laborum voluptas at libero repellendus ducimus natus harum, accusantium nihil nam aperiam deleniti, eligendi magni suscipit numquam. Optio dolorum debitis laudantium error doloribus possimus commodi, veniam pariatur facere earum alias atque quod rem maxime facilis mollitia ipsum architecto dolore eos eveniet excepturi labore distinctio. Tenetur atque dolorem officia beatae provident quaerat magnam repellat repellendus, tempora ullam enim ducimus, quae dolorum, iure et sapiente cumque voluptatem quo perspiciatis nostrum dignissimos dolor fugit sequi animi! Illo, deleniti inventore fugit officiis voluptates harum ipsum?</p>
+            <p>Dolor esse maxime voluptatem suscipit, excepturi sunt soluta! Doloribus accusantium cupiditate fuga magni cumque, nisi quod quaerat labore, nobis unde ex iusto expedita veniam odit eos! Sint officiis numquam nam maiores nobis, delectus qui sapiente debitis ipsa alias nisi doloribus omnis repellat illo aliquam eveniet minus eligendi, error enim commodi voluptas. Voluptatibus, itaque tenetur architecto id molestias modi ut iusto laborum vitae tempora dignissimos? Esse illum ea aliquam perferendis optio incidunt assumenda dolores similique! Veritatis sit, perspiciatis distinctio eos incidunt, voluptatibus quasi aspernatur repellendus quam eius exercitationem ipsum ut odit delectus amet aut. Quibusdam totam voluptate voluptas. Voluptate minima totam saepe iusto debitis officia facere optio excepturi laboriosam. Blanditiis necessitatibus nulla excepturi, illum molestias quam animi velit doloribus voluptas quisquam qui a eligendi minus sequi doloremque, voluptates, eius corrupti adipisci. Ipsum aliquam rerum quos, architecto reiciendis deserunt commodi maxime minima quae exercitationem aliquid a assumenda sapiente consequatur? Autem, temporibus omnis.</p>
+        </main>
+        <aside>
+            <h1>Conteúdo Secundário</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem dolorum commodi, doloremque quo rerum quaerat et consequatur facere cupiditate quasi. Alias ipsum veritatis ipsam quia? Fugit reprehenderit ea minima perferendis libero dicta, iure rerum cumque. Ipsum veniam optio voluptas maiores iste, vel autem ipsa quod, odio nemo vero eos rem cupiditate velit dolore unde a. Veniam aperiam quasi tempora numquam velit itaque voluptatibus laboriosam excepturi quo nesciunt ratione nobis nisi ducimus necessitatibus autem repellat sint iste, quidem suscipit maxime minima placeat. Perferendis necessitatibus voluptates asperiores voluptate, numquam eius adipisci laboriosam fugit, dignissimos labore dolores impedit ex facilis architecto ipsa itaque possimus, velit quidem hic et dolorum maxime enim fuga soluta. A, unde, asperiores et alias suscipit voluptatum fugiat enim possimus dolor maiores omnis voluptatibus in eligendi, totam nihil recusandae accusamus reprehenderit obcaecati corporis veritatis ex voluptas laudantium incidunt? Officiis inventore quae, quas eaque voluptatum quos sequi rem iure. Cum, nemo.</p>
+        </aside>
+    </div>
+    <footer></footer>
+</body>
+</html>
