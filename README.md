@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/31068747/README.md)
+
 # Estudos de HTML & CSS
 
 Repositório com exercícios práticos de HTML e CSS, incluindo uso do framework Bootstrap.
